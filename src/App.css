@@ -1,0 +1,103 @@
+#root {
+  font-family: "Manrope", sans-serif;
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.reset {
+  background-color: none;
+  transition: background-color 0.3 ease-in-out;
+}
+
+h1,
+h2 {
+  margin: 5px 0;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  box-shadow: 1px 1px 5px #000000;
+  background: #f0eaea;
+  z-index: 1;
+}
+
+.message {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  font-size: 10rem;
+  color: #ff0000;
+  background: #00000080;
+}
+
+.message:empty {
+  display: none;
+}
+
+.score {
+  color: #92badf;
+  z-index: 1;
+}
+
+.board {
+  border: 1px solid #000000;
+}
+
+div[class^="row-"] {
+  display: flex;
+  transition: background-color ease-in-out 0.2s;
+}
+
+.row-1:has(.active) {
+  background-color: #ff0000cc;
+}
+
+.row-2:has(.active) {
+  background-color: #00ff05cc;
+}
+
+.row-3:has(.active) {
+  background-color: #0000ffcc;
+}
+
+div[class^="cell-"]:not(.active) {
+  background-color: #282c34
+}
+
+div[class^="cell-"][class*="1"]:not([class*="-1"]).active,
+div[class^="cell-"][class*="11"].active {
+  background-color: #e1323280;
+}
+
+div[class^="cell-"][class*="2"]:not([class*="-2"]).active,
+div[class^="cell-"][class*="22"].active {
+  background-color: #32ff3280;
+}
+
+div[class^="cell-"][class*="3"]:not([class*="-3"]).active,
+div[class^="cell-"][class*="33"].active {
+  background-color: #3232e180;
+}
+
+div[class^="cell"],
+div[class="cell"] {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  transition: background-color ease-in-out 0.2s;
+  cursor: pointer;
+}
+
+.locked {
+  pointer-events: none;
+}
