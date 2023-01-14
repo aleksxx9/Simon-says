@@ -98,6 +98,14 @@ div[class="cell"] {
   cursor: pointer;
 }
 
+@media screen and (max-width: 700px) {
+  div[class^="cell"],
+  div[class="cell"] {
+    width: 30vw;
+    height: 30vw;
+  }
+}
+
 .locked {
   pointer-events: none;
 }
